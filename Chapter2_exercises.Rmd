@@ -1,0 +1,122 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+## R code 2M1
+### (1)
+```{r}
+# define grid
+p_grid <- seq( from=0 , to=1 , length.out=10000 )
+
+# define prior
+prior <- rep( 1 , 20 )
+
+# compute likelihood at each value in grid
+likelihood <- dbinom( 3 , size=3 , prob=p_grid )
+
+# compute product of likelihood and prior
+unstd.posterior <- likelihood * prior
+
+# standardize the posterior, so it sums to 1
+posterior <- unstd.posterior / sum(unstd.posterior)
+
+
+## R code 2.4
+plot( p_grid , posterior , type="b" ,
+      xlab="probability of water" , ylab="posterior probability" )
+mtext( "20 points" )
+```
+
+### (2)
+```{r}
+# define grid
+p_grid <- seq( from=0 , to=1 , length.out=10000 )
+
+# define prior
+prior <- rep( 1 , 20 )
+
+# compute likelihood at each value in grid
+likelihood <- dbinom( 3 , size=4 , prob=p_grid )
+
+# compute product of likelihood and prior
+unstd.posterior <- likelihood * prior
+
+# standardize the posterior, so it sums to 1
+posterior <- unstd.posterior / sum(unstd.posterior)
+
+
+## R code 2.4
+plot( p_grid , posterior , type="b" ,
+      xlab="probability of water" , ylab="posterior probability" )
+mtext( "20 points" )
+```
+
+
+### (3)
+```{r}
+# define grid
+p_grid <- seq( from=0 , to=1 , length.out=10000 )
+
+# define prior
+prior <- rep( 1 , 20 )
+
+# compute likelihood at each value in grid
+likelihood <- dbinom( 5 , size=7 , prob=p_grid )
+
+# compute product of likelihood and prior
+unstd.posterior <- likelihood * prior
+
+# standardize the posterior, so it sums to 1
+posterior <- unstd.posterior / sum(unstd.posterior)
+
+
+## R code 2.4
+plot( p_grid , posterior , type="b" ,
+      xlab="probability of water" , ylab="posterior probability" )
+mtext( "20 points" )
+```
+
+## 2M3
+```{r}
+prior <- c(.5, .5)
+likelihood <- c(.3, 1)
+unstandardized.posterior <- prior * likelihood
+posterior <- unstandardized.posterior / sum(unstandardized.posterior)
+posterior[1]
+```
+
+## 2M4
+```{r}
+prior <- c(1/3, 1/3, 1/3)
+likelihood <- c(1,0.5, 0)
+unstandardized.posterior <- prior * likelihood
+posterior <- unstandardized.posterior / sum(unstandardized.posterior)
+posterior[1]
+```
+
+## 2M5
+```{r}
+prior <- c(1/4, 1/4, 1/4,1/4)
+likelihood <- c(1,0.5, 0, 1)
+unstandardized.posterior <- prior * likelihood
+posterior <- unstandardized.posterior / sum(unstandardized.posterior)
+posterior[1] + posterior[4]
+```
+
+##2M6
+```{r}
+prior <- c(1, 2, 3)
+likelihood <- c(1,0.5, 0)
+unstandardized.posterior <- prior * likelihood
+posterior <- unstandardized.posterior / sum(unstandardized.posterior)
+posterior[1]
+```
+
+##2M7
+```{r}
+
+```
+
